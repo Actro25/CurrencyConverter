@@ -12,10 +12,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0-noble AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["CurrencyConvertor.src.WebUI/WebUI.csproj", "CurrencyConvertor.src.WebUI/"]
-RUN dotnet restore "./CurrencyConvertor.src.WebUI/WebUI.csproj"
+COPY ["WebUI/WebUI.csproj", "WebUI/"]
+RUN dotnet restore "./WebUI/WebUI.csproj"
 COPY . .
-WORKDIR "/src/CurrencyConvertor.src.WebUI"
+WORKDIR "/src/WebUI"
 RUN dotnet build "./WebUI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage

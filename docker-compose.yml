@@ -3,4 +3,4 @@ services:
     image: ${DOCKER_REGISTRY-}webui
     build:
       context: .
-      dockerfile: CurrencyConvertor.src.WebUI/Dockerfile
+      dockerfile: src/WebUI/Dockerfile
