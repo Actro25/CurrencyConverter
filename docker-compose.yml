@@ -9,3 +9,12 @@ services:
         - web
     working_dir: /app/src/WebUI
     command: dotnet run
+
+  currency-tests:
+    image: mcr.microsoft.com/dotnet/sdk:9.0
+    volumes:
+        - .:/app
+    profiles:
+        - test
+    working_dir: /app
+    command: dotnet test -v n
