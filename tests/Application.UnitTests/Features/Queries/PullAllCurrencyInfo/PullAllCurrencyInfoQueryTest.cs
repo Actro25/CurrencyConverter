@@ -20,10 +20,11 @@ namespace Application.UnitTests.Features.Queries.PullAllCurrencyInfo
             PullAllCurrencyInfoQueryHandler pullData = new PullAllCurrencyInfoQueryHandler(_serviceCurrency);
             PullAllCurrencyInfoQuery inputData = new PullAllCurrencyInfoQuery();
             CancellationToken cancelToken = new CancellationToken();
+
             List<CurrencyInfoDto> expectedData = new List<CurrencyInfoDto> {
-                new CurrencyInfoDto("PKR", "Pakistan Rupee", "PK","Pakistan", Status.Available,"https://currencyfreaks.com/photos/flags/btc.png?v=0.1"),
-                new CurrencyInfoDto("BTC", "Bitcoin", "Crypto","Global", Status.Available, "https://currencyfreaks.com/photos/flags/btc.png?v=0.1"),
-                new CurrencyInfoDto("XPT", "Platinum", "Metal","Global", Status.Available, "https://currencyfreaks.com/photos/flags/xpt.png?v=0.1"),
+                new CurrencyInfoDto("PKR", "Pakistan Rupee", "PK","Pakistan", Status.AVAILABLE,"https://currencyfreaks.com/photos/flags/btc.png?v=0.1"),
+                new CurrencyInfoDto("BTC", "Bitcoin", "Crypto","Global", Status.AVAILABLE, "https://currencyfreaks.com/photos/flags/btc.png?v=0.1"),
+                new CurrencyInfoDto("XPT", "Platinum", "Metal","Global", Status.AVAILABLE, "https://currencyfreaks.com/photos/flags/xpt.png?v=0.1"),
             };
 
             pullData.Handle(inputData, cancelToken).Returns(expectedData);

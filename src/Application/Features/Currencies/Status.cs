@@ -8,9 +8,9 @@ namespace Application.Features.Currencies
 {
     public enum Status
     {
-        Undefined,
-        Available,
-        Unabailable,
-        Depreciated
+        UNDEFINED,
+        AVAILABLE,
+        UNAVAILABLE,
+        DEPRECIATED
     }
 }
