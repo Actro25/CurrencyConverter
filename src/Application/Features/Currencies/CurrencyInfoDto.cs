@@ -12,6 +12,6 @@ namespace Application.Features.Currencies
         [property: JsonPropertyName("currencyName")] string currencyName,
         [property: JsonPropertyName("countryCode")] string countryCode,
         [property: JsonPropertyName("countryName")] string countryName,
-        [property: JsonConverter(typeof(JsonStringEnumConverter))] [property: JsonPropertyName("status")] Status status,
+        [property: JsonConverter(typeof(JsonStringEnumConverter))][property: JsonPropertyName("status")] Status status,
         [property: JsonPropertyName("icon")] string icon);
 }

@@ -16,7 +16,8 @@ namespace Application.Features.Currencies.Queries.PullAllCurrencyInfo
     {
         private readonly ICurrencyInfoService _currencyInfoService;
 
-        public PullAllCurrencyInfoQueryHandler(ICurrencyInfoService currencyInfoService) {
+        public PullAllCurrencyInfoQueryHandler(ICurrencyInfoService currencyInfoService)
+        {
             _currencyInfoService = currencyInfoService;
         }
 

@@ -12,7 +12,8 @@ namespace Infrastructure.Services
     public class CurrencyInfoService : ICurrencyInfoService
     {
         private HttpClient _client;
-        public CurrencyInfoService(HttpClient client) {
+        public CurrencyInfoService(HttpClient client)
+        {
             _client = client;
         }
         public async Task<List<CurrencyInfoDto>> GetAllCurreencyInfoAsync(CancellationToken cancellationToken = default)

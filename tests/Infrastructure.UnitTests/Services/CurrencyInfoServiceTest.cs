@@ -10,10 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Infrastructure.UnitTests.Services
 {
-    internal class FakeHttpMessageHandler : HttpMessageHandler {
+    internal class FakeHttpMessageHandler : HttpMessageHandler
+    {
         private Queue<HttpResponseMessage> _responseMessage = new();
 
-        internal void SetResponse(HttpResponseMessage mes) {
+        internal void SetResponse(HttpResponseMessage mes)
+        {
             _responseMessage.Enqueue(mes);
         }
 
@@ -25,7 +27,8 @@ namespace Infrastructure.UnitTests.Services
     public class CurrencyInfoServiceTest
     {
         [Fact]
-        public async Task GetAllCurreencyInfoAsync_Null_ReturnsNewListCurrencyInfoDto() {
+        public async Task GetAllCurreencyInfoAsync_Null_ReturnsNewListCurrencyInfoDto()
+        {
             var fakeHandler = new FakeHttpMessageHandler();
             fakeHandler.SetResponse(new HttpResponseMessage
             {
@@ -38,11 +41,12 @@ namespace Infrastructure.UnitTests.Services
 
             var response = await service.GetAllCurreencyInfoAsync();
 
-            Assert.Equivalent(new List<CurrencyInfoDto>(),response);
+            Assert.Equivalent(new List<CurrencyInfoDto>(), response);
         }
 
         [Fact]
-        public async Task GetAllCurreencyInfoAsync_ThrowsException_ReturnsNewListCurrencyInfoDtoAsync() {
+        public async Task GetAllCurreencyInfoAsync_ThrowsException_ReturnsNewListCurrencyInfoDtoAsync()
+        {
             var fakeHandler = new FakeHttpMessageHandler();
             fakeHandler.SetResponse(new HttpResponseMessage
             {

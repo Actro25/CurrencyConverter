@@ -16,7 +16,8 @@ namespace Application.UnitTests.Features.Queries.PullAllCurrencyInfo
         private readonly ICurrencyInfoService _serviceCurrency = Substitute.For<ICurrencyInfoService>();
 
         [Fact]
-        public async Task mediateR_NothingInput_ReturnsCorrectData() {
+        public async Task mediateR_NothingInput_ReturnsCorrectData()
+        {
             PullAllCurrencyInfoQueryHandler pullData = new PullAllCurrencyInfoQueryHandler(_serviceCurrency);
             PullAllCurrencyInfoQuery inputData = new PullAllCurrencyInfoQuery();
             CancellationToken cancelToken = new CancellationToken();
