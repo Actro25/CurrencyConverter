@@ -14,9 +14,9 @@ namespace Application.Features.Currencies.Queries.PullAllCurrencyInfo
 
     public class PullAllCurrencyInfoQueryHandler : IRequestHandler<PullAllCurrencyInfoQuery, List<CurrencyInfoDto>>
     {
-        private readonly ICurrencyInfoService _currencyInfoService;
+        private readonly ICurrencyFreaksService _currencyInfoService;
 
-        public PullAllCurrencyInfoQueryHandler(ICurrencyInfoService currencyInfoService)
+        public PullAllCurrencyInfoQueryHandler(ICurrencyFreaksService currencyInfoService)
         {
             _currencyInfoService = currencyInfoService;
         }

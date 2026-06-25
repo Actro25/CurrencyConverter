@@ -1,18 +1,20 @@
 ﻿using Application.Common.Interfaces;
-using Application.Features.Currencies;
+using Application.Features.Currencies.Queries.GetSpecialCurrencyRate;
+using Application.Features.Currencies.Queries.PullAllCurrencyInfo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public class CurrencyInfoService : ICurrencyInfoService
+    public class CurrencyFreaksService : ICurrencyFreaksService
     {
         private HttpClient _client;
-        public CurrencyInfoService(HttpClient client)
+        public CurrencyFreaksService(HttpClient client)
         {
             _client = client;
         }
@@ -25,7 +27,12 @@ namespace Infrastructure.Services
             }
             catch (HttpRequestException ex)
             {
-                Console.WriteLine($"API request error: {ex.Message}");
+                Console.WriteLine($"FREAKS_API request error: {ex.Message}");
+                return new List<CurrencyInfoDto>();
+            }
+            catch (JsonException ex)
+            {
+                Console.WriteLine($"JsonConvert Error occur in FREAKS_API error: {ex.Message}");
                 return new List<CurrencyInfoDto>();
             }
         }

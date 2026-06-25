@@ -1,4 +1,4 @@
-﻿using Application.Features.Currencies;
+﻿using Application.Features.Currencies.Queries.PullAllCurrencyInfo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Common.Interfaces
 {
-    public interface ICurrencyInfoService
+    public interface ICurrencyFreaksService
     {
         Task<List<CurrencyInfoDto>> GetAllCurreencyInfoAsync(CancellationToken cancellationToken = default);
     }

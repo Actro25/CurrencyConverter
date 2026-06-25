@@ -1,5 +1,4 @@
 ﻿using Application.Common.Interfaces;
-using Application.Features.Currencies;
 using Application.Features.Currencies.Queries.PullAllCurrencyInfo;
 using NSubstitute;
 using System;
@@ -13,7 +12,7 @@ namespace Application.UnitTests.Features.Queries.PullAllCurrencyInfo
 {
     public class PullAllCurrencyInfoQueryTest
     {
-        private readonly ICurrencyInfoService _serviceCurrency = Substitute.For<ICurrencyInfoService>();
+        private readonly ICurrencyFreaksService _serviceCurrency = Substitute.For<ICurrencyFreaksService>();
 
         [Fact]
         public async Task mediateR_NothingInput_ReturnsCorrectData()
