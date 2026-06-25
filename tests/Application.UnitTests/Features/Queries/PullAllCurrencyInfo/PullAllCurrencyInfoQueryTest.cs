@@ -1,12 +1,6 @@
 ﻿using Application.Common.Interfaces;
 using Application.Features.Currencies.Queries.PullAllCurrencyInfo;
 using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace Application.UnitTests.Features.Queries.PullAllCurrencyInfo
 {

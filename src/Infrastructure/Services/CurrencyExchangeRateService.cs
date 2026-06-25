@@ -2,7 +2,6 @@
 using Application.Features.Currencies.Queries.GetSpecialCurrencyRate;
 using System.Net.Http.Json;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Net;
 using Infrastructure.Services;
 using Application.Features.Currencies.Queries.GetSpecialCurrencyRate;
+
 namespace Infrastructure.UnitTests.Services
 {
     public class CurrencyExchangeRateServiceTest
@@ -30,7 +25,8 @@ namespace Infrastructure.UnitTests.Services
         public async Task GetCertainCurrencyRate_ApiException_ReturnsStatusUnseccessful()
         {
             var fakeHandler = new FakeHttpMessageHandler();
-            fakeHandler.SetResponse(new HttpResponseMessage { 
+            fakeHandler.SetResponse(new HttpResponseMessage
+            {
                 StatusCode = HttpStatusCode.InternalServerError,
                 Content = new StringContent("Server Error")
             });

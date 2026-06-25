@@ -1,13 +1,7 @@
 ﻿using Application.Common.Interfaces;
-using Application.Features.Currencies.Queries.GetSpecialCurrencyRate;
 using Application.Features.Currencies.Queries.PullAllCurrencyInfo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Json;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
