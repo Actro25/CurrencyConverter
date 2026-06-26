@@ -1,4 +1,4 @@
-﻿namespace Application.Features.Currencies.Queries.GetSpecialCurrencyRate
+﻿namespace Application.Features.Currencies.Queries
 {
     public enum Status
     {

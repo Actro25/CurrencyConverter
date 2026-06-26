@@ -7,6 +7,5 @@ namespace Application.Features.Currencies.Queries.PullAllCurrencyInfo
         [property: JsonPropertyName("currencyName")][property: JsonRequired()] string CurrencyName,
         [property: JsonPropertyName("countryCode")][property: JsonRequired()] string CountryCode,
         [property: JsonPropertyName("countryName")][property: JsonRequired()] string CountryName,
-        [property: JsonConverter(typeof(JsonStringEnumConverter))][property: JsonPropertyName("status")][property: JsonRequired()] Status Status,
         [property: JsonPropertyName("icon")][property: JsonRequired()] string Icon);
 }

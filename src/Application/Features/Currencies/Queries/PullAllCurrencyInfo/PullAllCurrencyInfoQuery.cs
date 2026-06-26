@@ -4,22 +4,21 @@ using Application.Common.Interfaces;
 
 namespace Application.Features.Currencies.Queries.PullAllCurrencyInfo
 {
-    public record PullAllCurrencyInfoQuery : IRequest<List<CurrencyInfoDto>>;
+    public record PullAllCurrencyInfoQuery(ProviderType Provider) : IRequest<List<CurrencyInfoDto>>;
 
     public class PullAllCurrencyInfoQueryHandler : IRequestHandler<PullAllCurrencyInfoQuery, List<CurrencyInfoDto>>
     {
-        private readonly ICurrencyFreaksService _currencyInfoService;
+        private readonly IEnumerable<ICurrencyProvider> _providers;
 
-        public PullAllCurrencyInfoQueryHandler(ICurrencyFreaksService currencyInfoService)
+        public PullAllCurrencyInfoQueryHandler(IEnumerable<ICurrencyProvider> providers)
         {
-            _currencyInfoService = currencyInfoService;
+            _providers = providers;
         }
-
         public async Task<List<CurrencyInfoDto>> Handle(PullAllCurrencyInfoQuery request, CancellationToken cancellationToken)
         {
-            var data = await _currencyInfoService.GetAllCurreencyInfoAsync();
-
-            return data;
+            var provider = _providers.FirstOrDefault(p => p.ProviderType == request.Provider)
+                ?? throw new Exception($"Провайдер {request.Provider} не знайдений");
+            return await provider.GetAllCurreencyInfoAsync();
         }
     }
 }

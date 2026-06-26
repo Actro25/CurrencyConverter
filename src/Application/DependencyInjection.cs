@@ -9,6 +9,7 @@ namespace Application
         {
             services.AddTransient<ICurrencyFreaksService>();
             services.AddTransient<ICurrencyExchangeRateService>();
+            services.AddTransient<ICurrencyProvider>();
             return services;
         }
     }

@@ -1,6 +1,8 @@
 ﻿using System.Net;
 using Infrastructure.Services;
 using Application.Features.Currencies.Queries.GetSpecialCurrencyRate;
+using Application.Features.Currencies.Queries;
+using Application.Features.Currencies;
 
 namespace Infrastructure.UnitTests.Services
 {
@@ -34,7 +36,7 @@ namespace Infrastructure.UnitTests.Services
             client.BaseAddress = new Uri("https://v6.exchangerate-api.com/v6/");
             var service = new CurrencyExchangeRateService(client);
 
-            var response = await service.GetCertainCurrencyRate(new GetSpecialCurrencyRateQuery("USD", "EUR"));
+            var response = await service.GetCertainCurrencyRate(new GetSpecialCurrencyRateQuery("USD", "EUR", ProviderType.ExchangeRateApi));
 
             Assert.True(Status.UNSECCESSFUL == response.Status);
         }
@@ -52,7 +54,7 @@ namespace Infrastructure.UnitTests.Services
             client.BaseAddress = new Uri("https://v6.exchangerate-api.com/v6/");
             var service = new CurrencyExchangeRateService(client);
 
-            var response = await service.GetCertainCurrencyRate(new GetSpecialCurrencyRateQuery("USD", "EUR"));
+            var response = await service.GetCertainCurrencyRate(new GetSpecialCurrencyRateQuery("USD", "EUR", ProviderType.ExchangeRateApi));
 
             Assert.True(Status.UNSECCESSFUL == response.Status);
         }
@@ -74,7 +76,7 @@ namespace Infrastructure.UnitTests.Services
             client.BaseAddress = new Uri("https://v6.exchangerate-api.com/v6/");
             var service = new CurrencyExchangeRateService(client);
 
-            var response = await service.GetCertainCurrencyRate(new GetSpecialCurrencyRateQuery("USD", "EUR"));
+            var response = await service.GetCertainCurrencyRate(new GetSpecialCurrencyRateQuery("USD", "EUR", ProviderType.ExchangeRateApi));
 
             Assert.True(Status.UNSECCESSFUL == response.Status);
         }
@@ -92,7 +94,7 @@ namespace Infrastructure.UnitTests.Services
             client.BaseAddress = new Uri("https://v6.exchangerate-api.com/v6/");
             var service = new CurrencyExchangeRateService(client);
 
-            var response = await service.GetCertainCurrencyRate(new GetSpecialCurrencyRateQuery("USD", "EUR"));
+            var response = await service.GetCertainCurrencyRate(new GetSpecialCurrencyRateQuery("USD", "EUR", ProviderType.ExchangeRateApi));
 
             Assert.True(Status.UNSECCESSFUL == response.Status);
         }
